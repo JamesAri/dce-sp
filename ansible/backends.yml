@@ -1,0 +1,8 @@
+---
+
+- name: Initial BE Cluster Configuration
+  hosts: backends
+  roles:
+    - users
+    - docker
+    - app

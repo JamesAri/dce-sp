@@ -1,0 +1,48 @@
+- name: Create base dir for app
+  become: true
+  ansible.builtin.file:
+    path: "{{ remote_app_base_dir }}"
+    mode: "0775"
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+    state: "directory"
+
+- name: Copy app files
+  become: true
+  copy:
+    src: "{{ playbook_dir }}/../{{ local_app_base_dir }}/"
+    dest: "{{ remote_app_base_dir }}/"
+
+- name: Copy Docker Compose files
+  become: true
+  copy:
+    src: "{{ playbook_dir }}/../{{ local_app_base_dir }}/{{ item }}"
+    dest: "{{ remote_app_base_dir }}/{{ item }}"
+  loop:
+  - docker-compose.yml
+  - Dockerfile
+
+- name: Deploy Docker Compose stack
+  become: true
+  community.docker.docker_compose_v2:
+    project_src: "{{ remote_app_base_dir }}"
+    build: always
+    state: present
+    files:
+      - docker-compose.yml
+
+# - name: Run the app docker image
+#   become: true
+#   docker_container:
+#     name: "{{ gitlab_image_name }}"
+#     image: "{{ gitlab_image_url }}"
+#     state: started
+#     restart_policy: always
+#     restart: true
+#     pull: true
+#     cleanup: true
+#     ports:
+#       - "80:8080"
+#     env:
+#       NODE_ENV: "production"
+#       PORT: "8080"

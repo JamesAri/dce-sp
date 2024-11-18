@@ -1,0 +1,12 @@
+services:
+  loadbalancer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+    - ./config/backends.conf:/etc/nginx/conf.d/backends.conf
+    ports:
+    - "8080:80"
+
+
+

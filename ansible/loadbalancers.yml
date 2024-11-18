@@ -1,0 +1,9 @@
+---
+
+- name: Initial LB Cluster Configuration
+  hosts: loadbalancers
+  roles:
+    - users
+    - docker
+    - app
+    - nginx

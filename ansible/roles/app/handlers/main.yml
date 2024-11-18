@@ -1,0 +1,8 @@
+- name: Restart the service
+  become: true
+  community.docker.docker_compose_v2:
+    project_src: "{{ remote_app_base_dir }}"
+    build: never
+    state: restarted
+    files:
+      - docker-compose.yml

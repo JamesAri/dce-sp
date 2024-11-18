@@ -1,0 +1,5 @@
+user_name: be_user
+user_group: be_user
+
+remote_app_base_dir: "/opt/be_app"
+local_app_base_dir: "backend"

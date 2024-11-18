@@ -1,0 +1,9 @@
+- name: Copy the Nginx templated configuration file
+  become: true
+  ansible.builtin.template:
+    src: templates/backends.config.j2
+    dest: "{{remote_app_base_dir}}/config/backends.conf"
+    owner: "{{ user_name }}"
+    group: "{{ user_group }}"
+    mode: '0644'
+  notify: Restart the service

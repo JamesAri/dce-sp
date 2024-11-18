@@ -1,0 +1,5 @@
+upstream backend-lb {
+    {% for backend in groups['backends'] %}
+	server {{ backend }}:{{ backend_port }} weight=1;
+	{% endfor %}
+}

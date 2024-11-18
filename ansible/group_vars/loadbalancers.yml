@@ -1,0 +1,5 @@
+user_name: lb_user
+user_group: lb_user
+
+remote_app_base_dir: "/opt/lb_app"
+local_app_base_dir: "loadbalancer"
