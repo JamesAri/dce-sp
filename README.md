@@ -42,3 +42,8 @@ vm_lb_instance_count = 1
 ## How to run
 
 After you finish with the configuration, you may execute the `deploy-iac.sh` script, it will just run terraform and ansible for you.
+
+## Github actions
+
+Project also includes manually triggerable github action `docker-publish.yml` for building multi-platform (`linux/amd64,linux/arm64`) `backend` and `loadbalancer` applications to Docker Hub.
+
