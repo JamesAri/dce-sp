@@ -1,3 +1,9 @@
+## About
+
+Simple IAC demo for deploying loadbalancer(s) and backend(s) from https://github.com/maxotta/kiv-ds-vagrant/tree/master/demo-3.
+
+*Used stack: Ansible, Terraform, Docker, Nginx, Python, Github Actions*
+
 ## Prerequisites (tested on):
 	ansible [core 2.17.5]
 	terraform v1.9.8
