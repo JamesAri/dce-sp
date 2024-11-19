@@ -10,7 +10,7 @@ Simple IAC demo for deploying loadbalancer(s) and backend(s) from https://github
 
 ## Configuration
 
-### Settings the SSH key for connecting to opennebula VMs (Ansible)
+### Setting the SSH key for connecting to opennebula VMs (Ansible)
 
 To override the default ssh private key file used for connecting to nuada VMs:
 
