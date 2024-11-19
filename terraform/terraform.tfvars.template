@@ -2,6 +2,7 @@ one_username      = "username"
 one_password      = "token"
 one_endpoint      = "https://nuada.zcu.cz/RPC2"
 vm_ssh_pubkey     = "ssh-rsa public key"
+vm_ssh_privatekey_file = "ssh-rsa private key file"
 
 vm_image_name     = "Ubuntu 22.04"
 vm_image_url      = "https://marketplace.opennebula.io//appliance/4562be1a-4c11-4e9e-b60a-85a045f1de05/download/0"
