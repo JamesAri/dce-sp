@@ -1,0 +1,10 @@
+[backends]
+147.228.173.174
+147.228.173.172
+
+[loadbalancers]
+147.228.173.173
+
+[all:vars]
+ansible_user=nodeadm
+backend_port=5000

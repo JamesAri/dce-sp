@@ -4,14 +4,14 @@
 set -e
 
 # --- Run terraform stack ---
-terraform -chdir=terraform init
-terraform -chdir=terraform apply -auto-approve
+# terraform -chdir=terraform init
+# terraform -chdir=terraform apply -auto-approve
 
 # --- Use this private key for opennebula VMs ---
 PRIVATE_KEY_FILE="~/.ssh/pk_nuada.pem"
 
 # --- Wait for the VMs to be ready ---
-MAX_RETRIES=10
+MAX_RETRIES=15
 echo "Waiting for VMs to be ready..."
 
 # Extract the list of hosts (IP addresses only) from the groups [backends] and [loadbalancers] in the inventory file
