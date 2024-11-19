@@ -11,7 +11,7 @@ terraform -chdir=terraform apply -auto-approve
 PRIVATE_KEY_FILE="~/.ssh/pk_nuada.pem"
 
 # --- Wait for the VMs to be ready ---
-MAX_RETRIES=15
+MAX_RETRIES=20
 echo "Waiting for VMs to be ready..."
 
 # Extract the list of hosts (IP addresses only) from the groups [backends] and [loadbalancers] in the inventory file
