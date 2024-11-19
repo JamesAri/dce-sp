@@ -49,7 +49,7 @@ vm_lb_instance_count = 1
 
 ## How to run
 
-After you finish with the configuration, you may execute the `deploy-iac.sh` script, it will just run terraform and ansible for you.
+After you finish with the configuration, you may execute the `deploy-iac.sh` script, it will just run terraform, waits for VMs to be up and ready and then runs ansible for you.
 
 ## Github actions
 
