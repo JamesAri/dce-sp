@@ -2,7 +2,7 @@
 # Simple backend service demo
 #
 
-from flask import Flask
+from flask import Flask # type: ignore
 import socket
 
 app = Flask(__name__)
