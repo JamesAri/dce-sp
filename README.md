@@ -58,3 +58,9 @@ Project also includes manually triggerable github action `docker-publish.yml` fo
 - [Loadbalancer](https://hub.docker.com/repository/docker/jamesari/loadbalancer)
 - [Backend](https://hub.docker.com/repository/docker/jamesari/backend)
 
+## Try it out:
+
+- Backend-1: http://147.228.173.172:5000/
+- Backend-2: http://147.228.173.173:5000/
+- Loadbalancer: http://147.228.173.174:8080/service-api/find/cat
+
