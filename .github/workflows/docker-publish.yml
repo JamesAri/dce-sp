@@ -23,11 +23,11 @@ jobs:
         with:
           context: "{{defaultContext}}:backend"
           push: true
-          tags: jamesari/dce-sp:latest
+          tags: jamesari/backend:latest
     #   -
     #     name: Build and push loadbalancer image
     #     uses: docker/build-push-action@v6
     #     with:
     #       context: "{{defaultContext}}:loadbalancer"
     #       push: true
-    #       tags: user/app:latest
+    #       tags: jamesari/loadbalancer:latest
