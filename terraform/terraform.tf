@@ -13,14 +13,6 @@ provider "opennebula" {
   password      = "${var.one_password}"
 }
 
-# resource "opennebula_image" "os-image" {
-#     name = "${var.vm_image_name}"
-#     datastore_id = "${var.vm_imagedatastore_id}"
-#     persistent = false
-#     path = "${var.vm_image_url}"
-#     permissions = "600"
-# }
-
 resource "opennebula_virtual_machine" "loadbalancer-node-vm" {
   count = var.vm_lb_instance_count
   name = "loadbalancer-node-vm-${count.index + 1}"
@@ -79,10 +71,6 @@ resource "opennebula_virtual_machine" "loadbalancer-node-vm" {
       "reboot"
     ]
   }
-
-#   provisioner "local-exec" {
-#     command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i '${self.nic[0].computed_ip},' ../ansible/site.yml"
-#   }
 }
 
 resource "opennebula_virtual_machine" "backend-node-vm" {
@@ -105,7 +93,7 @@ resource "opennebula_virtual_machine" "backend-node-vm" {
     boot = "disk0"
   }
   disk {
-    image_id = 571 # opennebula_image.os-image.id
+    image_id = 571
     target   = "vda"
     size     = 6000 # 16GB
   }
