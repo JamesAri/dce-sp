@@ -43,7 +43,7 @@ vm_lb_instance_count = 1
 - you may specify the `one_endpoint` **EP** (this one is set for ZCU servers)
 - provide `vm_ssh_pubkey` with **public key** (content, not file) which you setup for your nuada account
 - provide `vm_ssh_privatekey_file` with **private key file** (file) corresponding to the above public key
-- set the number of loadbalancing VMs via `vm_be_instance_count` variable
+- set the number of loadbalancing VMs via `vm_lb_instance_count` variable
 - set the number of backend VMs via `vm_be_instance_count` variable
 - I suggest you leave the `vm_image_name` and `vm_image_url` untouched, but feel free to experiment
 
