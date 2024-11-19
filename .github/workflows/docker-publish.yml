@@ -1,10 +1,7 @@
 name: ci
 
 on:
-    push:
-      branches: [main]
-    pull_request:
-      branches: [main]
+  workflow_dispatch:
 
 jobs:
   docker:
@@ -24,10 +21,12 @@ jobs:
           context: "{{defaultContext}}:backend"
           push: true
           tags: jamesari/backend:latest
-    #   -
-    #     name: Build and push loadbalancer image
-    #     uses: docker/build-push-action@v6
-    #     with:
-    #       context: "{{defaultContext}}:loadbalancer"
-    #       push: true
-    #       tags: jamesari/loadbalancer:latest
+          platforms: linux/amd64,linux/arm64
+      -
+        name: Build and push loadbalancer image
+        uses: docker/build-push-action@v6
+        with:
+          context: "{{defaultContext}}:loadbalancer"
+          push: true
+          tags: jamesari/loadbalancer:latest
+          platforms: linux/amd64,linux/arm64
